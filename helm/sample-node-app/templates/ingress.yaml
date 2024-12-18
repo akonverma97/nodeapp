@@ -6,7 +6,7 @@ metadata:
   annotations:
     {{- toYaml .Values.ingress.annotations | nindent 4 }}
 spec:
-  ingerssClassName: nginx
+  ingressClassName: nginx
   rules:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host }}
@@ -17,7 +17,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ $.Release.Name }}-lb
+                name: {{ $.Release.Name }}-service
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}
