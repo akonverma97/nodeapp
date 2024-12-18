@@ -1,0 +1,38 @@
+replicaCount: 1
+
+image:
+  repository: akondocker97/sample-node-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+containerPort: 3000
+
+resources: 
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: samplenodeapp.mydomaininfo.xyz
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []  # Example TLS configuration can be added later if needed
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
