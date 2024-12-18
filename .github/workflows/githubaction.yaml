@@ -1,12 +1,12 @@
-name: Build and Deploy on dev
+name: Build and Deploy on qa
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "qa" ]
 env:
-  ENVIRONMENT: dev
+  ENVIRONMENT: qa
   IMAGE: akondocker97/sample-node-app
-  VERSION: dev-1.0.0
+  VERSION: qa-1.0.0
 
 jobs:
   build-and-push:
