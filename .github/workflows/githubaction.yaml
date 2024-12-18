@@ -1,12 +1,12 @@
-name: Build and Deploy on dev
+name: Build and Deploy on stage
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "stage" ]
 env:
-  ENVIRONMENT: dev
+  ENVIRONMENT: stage
   IMAGE: akondocker97/sample-node-app
-  VERSION: dev-1.0.0
+  VERSION: stage-1.0.0
 
 jobs:
   build-and-push:
