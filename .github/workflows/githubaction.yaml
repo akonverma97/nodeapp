@@ -6,7 +6,7 @@ on:
 env:
   ENVIRONMENT: dev
   IMAGE: akondocker97/sample-node-app
-  VERSION: dev-1.0.0
+  VERSION: dev-1.0.1
 
 jobs:
   build-and-push:
