@@ -1,0 +1,30 @@
+image:
+  repository: jenkins/jenkins
+  tag: "lts"
+  pullPolicy: IfNotPresent
+
+persistence:
+  enabled: true
+  existingClaim: ""   
+  storageClass: "gp2"  
+  accessMode: ReadWriteOnce
+  size: 10Gi  
+  annotations: {}   
+
+service:
+  type: LoadBalancer
+  port: 8080
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "512Mi"
+  limits:
+    cpu: "1"
+    memory: "1Gi"
+
+jenkins:
+  adminUser: admin
+  adminPassword: admin123  

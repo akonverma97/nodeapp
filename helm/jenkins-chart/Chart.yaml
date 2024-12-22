@@ -1,0 +1,6 @@
+apiVersion: v2
+name: jenkins
+description: A Helm chart for Kubernetes to deploy Jenkins with persistent storage
+type: application
+version: 1.0.0
+appVersion: "2.375.2" # You can specify the version of Jenkins here
